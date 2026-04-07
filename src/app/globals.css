@@ -1,0 +1,88 @@
+/**
+ * Malta Gold CMS — Global Design Token System
+ * All Puck blocks consume only var(--pm-*) — swap theme to restyle everything.
+ */
+
+/* ── BASE RESET ────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body { font-family: var(--pm-font); background: var(--pm-bg); color: var(--pm-text); line-height: 1.6; }
+img, video { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+button { font-family: inherit; }
+
+/* ── THEME: Malta Gold (default) ────────────────────────────────────── */
+:root, [data-theme="malta-gold"], .pm-theme-malta-gold {
+  --pm-bg:         #0E0E0E;
+  --pm-bg-2:       #151515;
+  --pm-bg-3:       #1C1C1C;
+  --pm-border:     rgba(200,169,106,0.18);
+  --pm-accent:     #C8A96A;
+  --pm-accent-fg:  #0E0E0E;
+  --pm-text:       #F5F0E8;
+  --pm-text-muted: #8A8070;
+  --pm-radius:     12px;
+  --pm-font:       -apple-system, 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* ── THEME: Dark ─────────────────────────────────────────────────────────── */
+[data-theme="dark"], .pm-theme-dark {
+  --pm-bg:         #000000;
+  --pm-bg-2:       #0A0A0A;
+  --pm-bg-3:       #141414;
+  --pm-border:     rgba(255,255,255,0.08);
+  --pm-accent:     #FFFFFF;
+  --pm-accent-fg:  #000000;
+  --pm-text:       #FFFFFF;
+  --pm-text-muted: #666666;
+  --pm-radius:     8px;
+  --pm-font:       -apple-system, 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* ── THEME: Light Sand ─────────────────────────────────────────────────── */
+[data-theme="light"], .pm-theme-light {
+  --pm-bg:         #FAF8F5;
+  --pm-bg-2:       #F0EDE6;
+  --pm-bg-3:       #FFFFFF;
+  --pm-border:     rgba(0,0,0,0.1);
+  --pm-accent:     #8B6914;
+  --pm-accent-fg:  #FFFFFF;
+  --pm-text:       #1A1208;
+  --pm-text-muted: #6B5D4A;
+  --pm-radius:     12px;
+  --pm-font:       -apple-system, 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* ── THEME: Ocean Blue ─────────────────────────────────────────────────── */
+[data-theme="ocean"], .pm-theme-ocean {
+  --pm-bg:         #040D1A;
+  --pm-bg-2:       #081528;
+  --pm-bg-3:       #0D1F38;
+  --pm-border:     rgba(56,189,248,0.15);
+  --pm-accent:     #38BDF8;
+  --pm-accent-fg:  #040D1A;
+  --pm-text:       #E0F2FE;
+  --pm-text-muted: #4B7FA8;
+  --pm-radius:     12px;
+  --pm-font:       -apple-system, 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* ── AI CUSTOM (overridable via JS) ────────────────────────────────── */
+[data-theme="ai-custom"] { /* set via inline style from ThemeCreator */ }
+
+/* ── SCROLLBAR ────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--pm-bg-2); }
+::-webkit-scrollbar-thumb { background: var(--pm-border); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: var(--pm-accent); }
+
+/* ── PUCK EDITOR SURFACE OVERRIDES ───────────────────────────────── */
+.PuckLayout {
+  --puck-color-brand: var(--pm-accent);
+  --puck-color-brand-dark: var(--pm-accent);
+  --puck-color-brand-light: color-mix(in srgb, var(--pm-accent) 20%, transparent);
+  font-family: var(--pm-font);
+}
+
+/* ── FOCUS ────────────────────────────────────────────────────────────── */
+:focus-visible { outline: 2px solid var(--pm-accent); outline-offset: 3px; }
